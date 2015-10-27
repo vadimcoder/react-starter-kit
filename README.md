@@ -1,2 +1,16 @@
-# spa-prototype
-Starter Kit for modern SPA application. Only lastet and fresh web technologies
+# Technologies:
+
+* WebPack
+* ES6
+* React
+* Redux Form 3.0
+* PostCSS
+* ESLint
+* Rollbar?
+* Tests? 
+
+# Out of the box application skeleton:
+
+* authorization
+* authentication
+* i18n by http://l20n.org
