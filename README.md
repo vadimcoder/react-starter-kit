@@ -6,6 +6,7 @@
 * Redux Form 3.0
 * PostCSS
 * ESLint
+* JSCS
 * Rollbar?
 * Tests? 
 
