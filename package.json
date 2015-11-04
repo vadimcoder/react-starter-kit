@@ -1,0 +1,16 @@
+{
+  "name": "spa-starter-kit",
+  "version": "1.0.0",
+  "description": "Starter Kit for a modern SPA application. Includes only the latest and greatest web technologies. Use it for your next heroic SPA project because you can't go wrong with it",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vadim Vinogradov <vadim.vinogradov@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^5.8.29",
+    "babel-loader": "^5.3.2",
+    "webpack": "^1.12.2"
+  }
+}

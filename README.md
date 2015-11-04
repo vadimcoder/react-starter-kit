@@ -1,3 +1,5 @@
+Starter Kit for a modern SPA application. Includes only the latest and greatest web technologies. Use it for your next heroic SPA project because you can't go wrong with it.
+
 # Technologies:
 
 * WebPack
