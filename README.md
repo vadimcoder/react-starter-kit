@@ -10,7 +10,11 @@ Starter Kit for a modern SPA application. Includes only the latest and greatest 
 * ESLint
 * JSCS
 * Rollbar?
-* Tests? 
+
+* Tests:
+* karma
+* karma-coverage/istambul?
+* js-complexity-vz?
 
 # Out of the box application skeleton:
 
