@@ -2,12 +2,12 @@ Starter Kit for a modern SPA application. Includes only the latest and greatest 
 
 # Technologies:
 
-* WebPack
+* WebPack +
 * ES6
 * React
 * Redux Form 3.0
 * PostCSS
-* ESLint
+* ESLint +
 * JSCS
 * Rollbar?
 

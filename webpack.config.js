@@ -11,13 +11,15 @@ webpack({
         filename: "app.js"
     },
     module: {
-      loaders: [
-        {
+      loaders: [{
+          loader: 'babel',
           test: /\.js$/,
           exclude: /(node_modules|bower_components)/,
-          loader: 'babel'
-        }
-      ]
+          query: {
+              cacheDirectory: true,
+              presets: ['es2015', 'react']
+          }
+        }]
     }
 }, function(err, stats) {
     // ...

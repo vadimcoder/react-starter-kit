@@ -4,13 +4,19 @@
   "description": "Starter Kit for a modern SPA application. Includes only the latest and greatest web technologies. Use it for your next heroic SPA project because you can't go wrong with it",
   "main": "index.js",
   "scripts": {
+    "dev": "webpack webpack.config.js",
+    "dist": "",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Vadim Vinogradov <vadim.vinogradov@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "babel-core": "^5.8.29",
-    "babel-loader": "^5.3.2",
+    "babel-core": "^6.1.2",
+    "babel-loader": "^6.0.1",
+    "babel-preset-es2015": "^6.1.2",
+    "babel-preset-react": "^6.1.2",
+    "eslint": "^1.9.0",
+    "eslint-plugin-react": "^3.8.0",
     "webpack": "^1.12.2"
   }
 }
