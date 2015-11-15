@@ -1,13 +1,16 @@
-var webpack = require("webpack");
 
-console.log(__dirname);
-console.log(process.cwd());
+
+// TODO add eslint and diplicate case rule
+
+var path = require('path');
+var webpack = require("webpack");
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 webpack({
-    context: __dirname + "/src",
+    context: path.join(__dirname, '/src'),
     entry: "./entry",
     output: {
-        path: __dirname + "/dist",
+        path: path.join(__dirname, 'dist'),
         filename: "app.js"
     },
     module: {
@@ -16,11 +19,17 @@ webpack({
           test: /\.js$/,
           exclude: /(node_modules|bower_components)/,
           query: {
-              cacheDirectory: true,
               presets: ['es2015', 'react']
           }
-        }]
-    }
+         },{
+          test: /\.scss$/,
+          loader: ExtractTextPlugin.extract('style', 'css!sass')
+          // loader: 'style!css!sass'
+        }],
+    },
+    plugins: [
+        new ExtractTextPlugin("app.css")
+    ]
 }, function(err, stats) {
     // ...
 }).watch({ // watch options:
@@ -28,5 +37,5 @@ webpack({
     poll: true // use polling instead of native watchers
     // pass a number to set the polling interval
 }, function(err, stats) {
-    // ...
+    console.log(stats);
 });

@@ -1,4 +1,7 @@
-var module2 = require('./module2');
+require("./style1.scss");
 
-console.log('entry.js1');
-module2();
+var module2 = require('./module2');
+console.log(module2);
+
+
+console.log('entry.js');
