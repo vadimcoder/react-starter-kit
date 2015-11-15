@@ -2,13 +2,12 @@ Starter Kit for a modern SPA application. Includes only the latest and greatest 
 
 # Done
 
-* WebPack
-* ES6
-* SASS
+* WebPack (build tool, module system, bundling, watch mode, minification ect...)
+* ES6 (bundled into one minified file)
+* SASS (bundled into one minified file)
 
 # TODO
 
-* app.css minification
 * React
 * Redux Form 3.0
 * ESLint

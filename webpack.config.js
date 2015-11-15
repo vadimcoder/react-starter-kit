@@ -28,7 +28,10 @@ webpack({
         }],
     },
     plugins: [
-        new ExtractTextPlugin("app.css")
+        new ExtractTextPlugin("app.css"),
+        new webpack.optimize.UglifyJsPlugin({
+            mangle: true
+        })
     ]
 }, function(err, stats) {
     // ...
