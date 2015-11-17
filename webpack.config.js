@@ -24,7 +24,6 @@ webpack({
          },{
           test: /\.scss$/,
           loader: ExtractTextPlugin.extract('style', 'css!sass')
-          // loader: 'style!css!sass'
         }],
     },
     plugins: [

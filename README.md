@@ -2,9 +2,15 @@ Starter Kit for a modern SPA application. Includes only the latest and greatest 
 
 # Done
 
-* WebPack (build tool, module system, bundling, watch mode, minification ect...)
-* ES6 (bundled into one minified file)
-* SASS (bundled into one minified file)
+* WebPack (build tool, module system, bundling, watch mode)
+* ES6
+  * bundled
+  * UglifyJs minified
+  * UglifyJs compressed
+  * UglifyJs mangled
+* SASS
+  * bundled
+  * UglifyJs minified
 
 # TODO
 
