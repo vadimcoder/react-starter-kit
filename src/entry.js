@@ -1,3 +1,3 @@
-var reactHelloWorld = require('./react-hello-world');
+var reactHelloWorld = require('./helloWorldComponent/component');
 
 reactHelloWorld();

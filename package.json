@@ -4,8 +4,8 @@
   "description": "Starter Kit for a modern SPA application. Includes only the latest and greatest web technologies. Use it for your next heroic SPA project because you can't go wrong with it",
   "main": "index.js",
   "scripts": {
-    "start": "node webpack.config.js",
-    "dist": "",
+    "start": "webpack-dev-server --content-base dist",
+    "dist": "webpack --config webpack.config-dist.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Vadim Vinogradov <vadim.vinogradov@gmail.com>",
@@ -27,6 +27,7 @@
     "node-sass": "^3.4.2",
     "sass-loader": "^3.1.1",
     "style-loader": "^0.13.0",
-    "webpack": "^1.12.2"
+    "webpack": "^1.12.2",
+    "webpack-dev-server": "^1.12.1"
   }
 }

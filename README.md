@@ -1,6 +1,6 @@
 Starter Kit for a modern SPA application. Includes only the latest and greatest web technologies. Use it for your next heroic SPA project because you can't go wrong with it.
 
-# Done
+# Includes
 
 * WebPack (build tool, module system, bundling, watch mode)
 * ES6
@@ -8,17 +8,20 @@ Starter Kit for a modern SPA application. Includes only the latest and greatest 
   * UglifyJs minified
   * UglifyJs compressed
   * UglifyJs mangled
+* React (with React DOM)
 * SASS
   * bundled
   * UglifyJs minified
 
 # TODO
 
-* React
+* Redux
 * Redux Form 3.0
-* ESLint
+* ESLint configure rules: duplicate cases etc
 * JSCS
 * Rollbar?
+* clean dist directory before build
+* webpack-dev-server auto reload 
 
 ### Tests:
 
@@ -33,4 +36,8 @@ Starter Kit for a modern SPA application. Includes only the latest and greatest 
 * i18n by http://l20n.org
 
 # Run
-npm install && npm start
+npm install
+
+for dev: npm start, http://localhost:8080/
+
+for dist: npm run dist

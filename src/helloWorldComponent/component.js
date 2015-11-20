@@ -1,5 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+require('./style.scss');
 
 module.exports = function() {
     var HelloMessage = React.createClass({
