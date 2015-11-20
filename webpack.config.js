@@ -16,14 +16,17 @@ webpack({
     module: {
       loaders: [{
           loader: 'babel',
-          test: /\.js$/,
+          test: /\.js|jsx$/,
           exclude: /(node_modules|bower_components)/,
           query: {
               presets: ['es2015', 'react']
           }
          },{
-          test: /\.scss$/,
-          loader: ExtractTextPlugin.extract('style', 'css!sass')
+          loader: 'eslint',
+          test: /\.js|jsx$/
+        },{
+          loader: ExtractTextPlugin.extract('style', 'css!sass'),
+          test: /\.scss$/
         }],
     },
     plugins: [
@@ -39,5 +42,5 @@ webpack({
     poll: true // use polling instead of native watchers
     // pass a number to set the polling interval
 }, function(err, stats) {
-    console.log(stats);
+    console.log(stats.toString({colors: true}));
 });

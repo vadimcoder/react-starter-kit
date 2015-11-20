@@ -4,7 +4,7 @@
   "description": "Starter Kit for a modern SPA application. Includes only the latest and greatest web technologies. Use it for your next heroic SPA project because you can't go wrong with it",
   "main": "index.js",
   "scripts": {
-    "start": "webpack webpack.config.js",
+    "start": "node webpack.config.js",
     "dist": "",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,6 +18,7 @@
     "babel-preset-react": "^6.1.2",
     "css-loader": "^0.23.0",
     "eslint": "^1.9.0",
+    "eslint-loader": "^1.1.1",
     "eslint-plugin-react": "^3.8.0",
     "extract-text-webpack-plugin": "^0.9.1",
     "node-sass": "^3.4.2",

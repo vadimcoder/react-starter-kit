@@ -31,3 +31,6 @@ Starter Kit for a modern SPA application. Includes only the latest and greatest 
 * authorization
 * authentication
 * i18n by http://l20n.org
+
+# Run
+npm install && npm start
