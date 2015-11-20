@@ -10,7 +10,10 @@
   },
   "author": "Vadim Vinogradov <vadim.vinogradov@gmail.com>",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3"
+  },
   "devDependencies": {
     "babel-core": "^6.1.2",
     "babel-loader": "^6.0.1",

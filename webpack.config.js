@@ -5,9 +5,10 @@
 var path = require('path');
 var webpack = require("webpack");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var SRC_PATH = path.join(__dirname, 'src');
 
 webpack({
-    context: path.join(__dirname, '/src'),
+    context: SRC_PATH,
     entry: "./entry",
     output: {
         path: path.join(__dirname, 'dist'),
@@ -17,16 +18,18 @@ webpack({
       loaders: [{
           loader: 'babel',
           test: /\.js|jsx$/,
-          exclude: /(node_modules|bower_components)/,
+          include: SRC_PATH,
           query: {
               presets: ['es2015', 'react']
           }
          },{
           loader: 'eslint',
-          test: /\.js|jsx$/
+          test: /\.js|jsx$/,
+          include: SRC_PATH
         },{
           loader: ExtractTextPlugin.extract('style', 'css!sass'),
-          test: /\.scss$/
+          test: /\.scss$/,
+          include: SRC_PATH
         }],
     },
     plugins: [

@@ -1,7 +1,3 @@
-require("./style1.scss");
+var reactHelloWorld = require('./react-hello-world');
 
-var module2 = require('./module2');
-console.log(module2);
-
-
-console.log('entry.js');
+reactHelloWorld();
