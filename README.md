@@ -15,6 +15,7 @@ Starter Kit for a modern SPA application. Includes only the latest and greatest 
 
 # TODO
 
+* add hashes for assets
 * Redux
 * Redux Form 3.0
 * ESLint configure rules: duplicate cases etc
