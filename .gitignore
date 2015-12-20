@@ -2,6 +2,5 @@
 .idea
 node_modules
 bower_components
-dist/app.js
-dist/app.css
+dist
 npm-debug.log
