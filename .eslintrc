@@ -1,36 +1,55 @@
 {
-    "rules": {
-        "indent": [
+    'rules': {
+        'indent': [
             1,
             4
         ],
-        "quotes": [
-            2,
-            "single"
+        'quotes': [
+            1,
+            'single'
         ],
-        "linebreak-style": [
-            2,
-            "unix"
+        'linebreak-style': [
+            1,
+            'unix'
         ],
-        "semi": [
-            2,
-            "always"
+        'semi': [
+            1,
+            'always'
         ],
-        "no-empty-pattern": [
+        'no-empty-pattern': [
+            1
+        ],
+        'valid-jsdoc': [
+            1,
+            { 'prefer': {
+                'return': 'returns'
+            }
+        }],
+        'consistent-return': [
+            1
+        ],
+        curly: [
             2
+        ],
+        'dot-location': [
+            1,
+            'property'
+        ],
+        'eqeqeq': [
+          1
         ]
     },
-    "env": {
-        "es6": true,
-        "browser": true,
-        "node": true
+    'env': {
+        'es6': true,
+        'browser': true,
+        'node': true
     },
-    "extends": "eslint:recommended",
-    "ecmaFeatures": {
-        "jsx": true,
-        "experimentalObjectRestSpread": true
+    'extends': 'eslint:recommended',
+    'ecmaFeatures': {
+        'jsx': true,
+        'experimentalObjectRestSpread': true
     },
-    "plugins": [
-        "react"
+    'plugins': [
+        'react'
     ]
 }
