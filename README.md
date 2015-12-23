@@ -15,9 +15,9 @@ Starter Kit for a modern SPA application. Includes only the latest and greatest 
 
 # TODO
 
+* Tune ESLint
 * Redux
 * Redux Form 3.0
-* ESLint configure rules: duplicate cases etc
 * JSCS
 * Rollbar?
 
