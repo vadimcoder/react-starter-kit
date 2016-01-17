@@ -67,6 +67,21 @@ module.exports = {
     eslint: {
       // treat errors like warnings to not fail the build in development
       emitWarning: true
+    },
+
+    // specific settings for webpack-dev-server, see https://webpack.github.io/docs/webpack-dev-server.html
+    devServer: {
+      // https://github.com/webpack/webpack-dev-server/issues/143
+      // https://github.com/brikis98/docker-osx-dev
+      // watchOptions: {
+      //   poll: true,
+      // },
+      contentBase: "dist",
+      host: '0.0.0.0',
+      // proxy requests to the backend
+      proxy: {
+        "*": "http://localhost"
+      }
     }
 }
 
