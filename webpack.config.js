@@ -63,7 +63,11 @@ module.exports = {
           include: SRC_ABSOLUTE_PATH
         }],
     },
-    plugins: plugins
+    plugins: plugins,
+    eslint: {
+      // treat errors like warnings to not fail the build in development
+      emitWarning: true
+    }
 }
 
 // in case of NODE API (http://webpack.github.io/docs/node.js-api.html):
