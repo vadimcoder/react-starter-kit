@@ -4,6 +4,9 @@ require('./style.scss');
 
 module.exports = function() {
     var HelloMessage = React.createClass({
+        propTypes: {
+            name: React.PropTypes.string.isRequired
+        },
         render: function() {
             return <div>Hello {this.props.name}</div>;
         }

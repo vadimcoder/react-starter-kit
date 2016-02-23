@@ -12,9 +12,7 @@
   "license": "MIT",
   "dependencies": {
     "react": "*",
-    "react-dom": "*"
-  },
-  "devDependencies": {
+    "react-dom": "*",
     "babel-core": "*",
     "babel-loader": "*",
     "babel-preset-es2015": "*",
@@ -30,7 +28,9 @@
     "node-sass": "*",
     "sass-loader": "*",
     "style-loader": "*",
-    "webpack": "*",
+    "webpack": "*"
+  },
+  "devDependencies": {
     "webpack-dev-server": "*"
   }
 }

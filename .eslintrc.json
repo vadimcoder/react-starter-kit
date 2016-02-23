@@ -1,0 +1,62 @@
+{
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "script",
+        "ecmaFeatures": {
+            "jsx": true,
+            "experimentalObjectRestSpread": true
+        }
+    },
+    "rules": {
+        "indent": [
+            1,
+            4
+        ],
+        "quotes": [
+            1,
+            "single"
+        ],
+        "linebreak-style": [
+            1,
+            "unix"
+        ],
+        "semi": [
+            1,
+            "always"
+        ],
+        "no-empty-pattern": [
+            1
+        ],
+        "valid-jsdoc": [
+            1,
+            { "prefer": {
+                "return": "returns"
+            }
+        }],
+        "consistent-return": [
+            1
+        ],
+        "curly": [
+            2
+        ],
+        "dot-location": [
+            1,
+            "property"
+        ],
+        "eqeqeq": [
+          1
+        ]
+    },
+    "env": {
+        "es6": true,
+        "browser": true,
+        "commonjs": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    "plugins": [
+        "react"
+    ]
+}
