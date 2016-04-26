@@ -1,7 +1,5 @@
-'use strict';
-
-const React = require('react');
-const ReactDOM = require('react-dom');
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 
 require('./style.scss');
 
