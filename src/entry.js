@@ -1,5 +1,7 @@
+'use strict';
+
 require('file?name=[name].[ext]!./favicon.ico');
 
-var reactHelloWorld = require('./helloWorldComponent/component');
+const reactHelloWorld = require('./helloWorldComponent/component');
 
 reactHelloWorld();

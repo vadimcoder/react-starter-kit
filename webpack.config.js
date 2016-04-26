@@ -14,25 +14,25 @@ var APPLICATION_BUNDLE_FILENAME = 'app-[hash].js';
 var CSS_BUNDLE_FILENAME = 'app-[hash].css';
 
 var plugins = [
-  new ExtractTextPlugin(CSS_BUNDLE_FILENAME),
-  new Clean([DIST_PATH]),
-  new HtmlWebpackPlugin({
-    template: INDEX_HTML_TEMPLATE_ABSOLUTE_PATH,
-    inject: 'body'
-  })
+    new ExtractTextPlugin(CSS_BUNDLE_FILENAME),
+    new Clean([DIST_PATH]),
+    new HtmlWebpackPlugin({
+        template: INDEX_HTML_TEMPLATE_ABSOLUTE_PATH,
+        inject: 'body'
+    })
 ];
 
 var isDist = process.argv[2] === '--dist';
 
 if (isDist) {
-  var webpack = require("webpack");
-  
-  var uglifyJsPlugin = new webpack.optimize.UglifyJsPlugin({
-      mangle: true,
-      comments: false
-  });
+    var webpack = require("webpack");
 
-  plugins.push(uglifyJsPlugin);
+    var uglifyJsPlugin = new webpack.optimize.UglifyJsPlugin({
+        mangle: true,
+        comments: false
+    });
+
+    plugins.push(uglifyJsPlugin);
 }
 
 module.exports = {
@@ -43,52 +43,53 @@ module.exports = {
         filename: APPLICATION_BUNDLE_FILENAME
     },
     module: {
-      // loaders are loaded from bottom to top
-      loaders: [{
-          loader: 'babel',
-          test: /\.js|jsx$/,
-          include: SRC_ABSOLUTE_PATH, // other paths are ignored
-          query: {
-              presets: ['es2015', 'react']
-          }
-         },{
-          // ESLint should be before any transpiling tools.
-          // Or use preLoaders section to check source files, not modified by other loaders (like babel-loader)
-          loader: 'eslint',
-          test: /\.js|jsx$/,
-          include: SRC_ABSOLUTE_PATH
-        },{
-          loader: ExtractTextPlugin.extract('style', 'css!sass'),
-          test: /\.scss$/,
-          include: SRC_ABSOLUTE_PATH
-        }],
+        // loaders are loaded from bottom to top
+        loaders: [{
+            loader: 'babel',
+            test: /\.js|jsx$/,
+            include: SRC_ABSOLUTE_PATH, // other paths are ignored
+            query: {
+                presets: ['es2015', 'react']
+            }
+        }, {
+            // ESLint should be before any transpiling tools.
+            // Or use preLoaders section to check source files, not modified by other loaders (like babel-loader)
+            loader: 'eslint',
+            test: /\.js|jsx$/,
+            include: SRC_ABSOLUTE_PATH
+        }, {
+            loader: ExtractTextPlugin.extract('style', 'css!sass'),
+            test: /\.scss$/,
+            include: SRC_ABSOLUTE_PATH
+        }]
     },
     plugins: plugins,
     eslint: {
-      // treat errors like warnings to not fail the build in development
-      emitWarning: true
+        // treat errors like warnings to not fail the build in development iframe mode
+        // (http://localhost:8080/webpack-dev-server/)
+        emitWarning: true
     },
 
     // specific settings for webpack-dev-server, see https://webpack.github.io/docs/webpack-dev-server.html
     devServer: {
-      // https://github.com/webpack/webpack-dev-server/issues/143
-      // https://github.com/brikis98/docker-osx-dev
-      // watchOptions: {
-      //   poll: true,
-      // },
-      contentBase: "dist",
-      host: '0.0.0.0',
-      // proxy requests to the backend
-      proxy: {
-        "*": "http://localhost"
-      }
+        // https://github.com/webpack/webpack-dev-server/issues/143
+        // https://github.com/brikis98/docker-osx-dev
+        // watchOptions: {
+        //   poll: true,
+        // },
+        contentBase: "dist",
+        host: '0.0.0.0',
+        // proxy requests to the backend
+        proxy: {
+            "*": "http://localhost"
+        }
     }
-}
+};
 
 // in case of NODE API (http://webpack.github.io/docs/node.js-api.html):
 
 // webpack({
-  
+
 // }, function(err, stats) {
 // }).watch({ // watch options:
 //   debug: true,
