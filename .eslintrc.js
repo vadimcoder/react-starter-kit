@@ -56,7 +56,6 @@ module.exports = {
         'no-self-assign': ['warn'],
         'no-self-compare': ['warn'],
         'no-sequences': ['warn'],
-        'no-throw-literal': ['warn'],
         'no-unmodified-loop-condition': ['warn'],
         'no-unused-expressions': ['warn'],
         'no-unused-labels': ['warn'],
@@ -100,13 +99,12 @@ module.exports = {
         'computed-property-spacing': ['warn', 'never'],
         'consistent-this': ['warn', 'that'],
         'func-style': ['warn', 'declaration'],
-        'id-length': ['warn', {'min': 2}],
         'indent': ['warn', 4],
         'key-spacing': ['warn'],
         'keyword-spacing': ['warn'],
         'linebreak-style': ['warn', 'unix'],
         'max-depth': ['warn', 10],
-        'max-len': ['warn', {'code': 120, 'ignoreUrls': true}],
+        'max-len': ['warn', {'code': 140, 'ignoreUrls': true}],
         'max-nested-callbacks': ['warn', 5],
         'max-params': ['warn', 5],
         'max-statements-per-line': ['warn', {'max': 10}],
@@ -141,7 +139,7 @@ module.exports = {
 
         // ECMAScript2015 (http://eslint.org/docs/rules/#ecmascript-6):
         'arrow-body-style': ['warn', 'as-needed'],
-        'arrow-parens': ['warn', 'as-needed'],
+        'arrow-parens': ['warn'],
         'arrow-spacing': ['warn', {'before': true, 'after': true}],
         'constructor-super': ['warn'],
 
