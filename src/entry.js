@@ -1,5 +1,5 @@
-require('file?name=[name].[ext]!./favicon.ico');
+require('file-loader?name=[name].[ext]!./favicon.ico');
 
-const reactHelloWorld = require('./helloWorldComponent/component');
+import helloWorldComponent from './helloWorldComponent/helloWorldComponent';
 
-reactHelloWorld();
+helloWorldComponent();

@@ -1,6 +1,6 @@
 module.exports = {
     'parserOptions': {
-        'ecmaVersion': 6,
+        'ecmaVersion': 8,
         'sourceType': 'module',
         'ecmaFeatures': {
             'jsx': true,
@@ -64,6 +64,7 @@ module.exports = {
         'no-useless-escape': ['warn'],
         'no-warning-comments': ['warn'],
         'no-with': ['warn'],
+        'require-await': ['warn'],
         'wrap-iife': ['warn'],
         'yoda': ['warn'],
 
@@ -94,6 +95,7 @@ module.exports = {
         'block-spacing': ['warn'],
         'brace-style': ['warn', '1tbs', {'allowSingleLine': true}],
         'camelcase': ['warn', {'properties': 'never'}],
+        'comma-dangle': ['warn', 'never'],
         'comma-spacing': ['warn', {'before': false, 'after': true}],
         'comma-style': ['warn', 'last'],
         'computed-property-spacing': ['warn', 'never'],
@@ -166,7 +168,6 @@ module.exports = {
         'template-curly-spacing': ['warn', 'never']
     },
     'env': {
-        'es6': true,
         'browser': true,
         'commonjs': true
     },

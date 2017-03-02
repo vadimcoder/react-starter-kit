@@ -1,9 +1,9 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-require('./style.scss');
+require('./helloWorldComponent.scss');
 
-module.exports = function() {
+export default function() {
     const HelloMessage = React.createClass({
         propTypes: {
             name: React.PropTypes.string.isRequired
@@ -14,4 +14,4 @@ module.exports = function() {
     });
 
     ReactDOM.render(<HelloMessage name="John"/>, document.querySelector('#app'));
-};
+}
