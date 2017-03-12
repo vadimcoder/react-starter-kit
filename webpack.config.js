@@ -28,14 +28,18 @@ var plugins = [
 
 module.exports = function (env) {
     if (env && env.dist) {
+        // https://webpack.js.org/guides/production-build/
         var webpack = require('webpack');
 
-        var uglifyJsPlugin = new webpack.optimize.UglifyJsPlugin({
+        plugins.push(new webpack.optimize.UglifyJsPlugin({
+            beautify: false,
             mangle: true,
             comments: false
-        });
+        }));
 
-        plugins.push(uglifyJsPlugin);
+        plugins.push(new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify('production')
+        }));
     }
 
     return {
