@@ -15,4 +15,4 @@ for development purposes (watch mode with automatic browser refresh): `npm start
 
 for distribution purposes (generate public static files): `npm run dist`
 
-![](http://vinogradov.github.io/spa-starter-kit/screenshot.png)
+![](http://vinogradov.github.io/react-starter-kit/screenshot.png)
