@@ -4,14 +4,36 @@ import * as ReactDOM from 'react-dom';
 require('./helloWorldComponent.scss');
 
 export default function() {
-    const HelloMessage = React.createClass({
-        propTypes: {
-            name: React.PropTypes.string.isRequired
-        },
-        render() {
-            return <div>Hello {this.props.name}</div>;
+    class HelloMessage extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {toggle: true};
         }
-    });
 
-    ReactDOM.render(<HelloMessage name="John"/>, document.querySelector('#app'));
+        onClickHandler() {
+            this.setState((prevState) => ({
+                toggle: !prevState.toggle
+            }));
+        }
+
+        render() {
+            return (
+                <div>
+                    <div>Hello {this.props.name}</div>
+                    <button onClick={this.onClickHandler.bind(this)}>
+                        toggle: {this.state.toggle ? 'ON' : 'OFF'}
+                    </button>
+                </div>
+            );
+        }
+    }
+
+    HelloMessage.propTypes = {
+        name: React.PropTypes.string
+    };
+
+    ReactDOM.render(
+        <HelloMessage name="John"/>,
+        document.querySelector('#app')
+    );
 }

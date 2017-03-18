@@ -55,13 +55,7 @@ module.exports = function (env) {
                 test: /\.js$/,
                 include: SRC_ABSOLUTE_PATH, // other paths are ignored
                 use: [{
-                    loader: 'babel-loader',
-                    options: JSON.stringify({
-                        presets: [
-                            ['env', {modules: false}],
-                            'react'
-                        ]
-                    })
+                    loader: 'babel-loader'
                 }, {
                     // ESLint should be before any transpiling tools.
                     // Or use preLoaders section to check source files, not modified by other loaders (like babel-loader)
@@ -99,18 +93,3 @@ module.exports = function (env) {
         }
     }
 };
-
-// in case of NODE API (http://webpack.github.io/docs/node.js-api.html):
-
-// webpack({
-
-// }, function(err, stats) {
-// }).watch({ // watch options:
-//   debug: true,
-//     aggregateTimeout: 300, // wait so long for more changes
-//     poll: true // use polling instead of native watchers
-//     // pass a number to set the polling interval
-
-// }, function(err, stats) {
-//     console.log(stats.toString({colors: true}));
-// });
