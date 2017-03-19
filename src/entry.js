@@ -1,4 +1,4 @@
-require('file-loader?name=[name].[ext]!./favicon.ico');
+import 'file-loader?name=[name].[ext]!./favicon.ico';
 
 import helloWorldComponent from './helloWorldComponent/helloWorldComponent';
 
