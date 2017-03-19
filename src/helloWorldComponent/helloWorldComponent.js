@@ -1,7 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-
-require('./helloWorldComponent.scss');
+import './helloWorldComponent.scss';
 
 export default function() {
     class HelloMessage extends React.Component {
