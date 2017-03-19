@@ -73,6 +73,10 @@ module.exports = function (env) {
                     fallback: 'style-loader',
                     use: 'css-loader!sass-loader'
                 })
+            }, {
+                test: /\.(jpe?g|png|gif|svg)$/,
+                include: SRC_ABSOLUTE_PATH, // other paths are ignored
+                use: 'file-loader'
             }]
         },
         plugins: plugins,
