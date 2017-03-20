@@ -7,6 +7,7 @@ React starter kit for a modern single page (SPA) application. Includes only the 
 * [Babel](https://babeljs.io/) – ES2015/2016/2017 support
 * [ESLint](http://eslint.org/) – the pluggable linting utility for JavaScript and JSX
 * [SASS](http://sass-lang.com/) – CSS with superpowers
+* [whatwg-fetch](https://github.com/github/fetch) – A window.fetch JavaScript polyfill from GitHub according to the [spec](https://fetch.spec.whatwg.org/)
 
 # Usage
 `npm install`
