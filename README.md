@@ -1,6 +1,6 @@
-React starter kit 🚀 for a modern single page (SPA) application. Includes only the latest and greatest web technologies. Use it for your next heroic SPA project because you can't go wrong with it. Contains minimal viable "hello, world" code just to proof it works. Remove hello world and write your own great project.
+Includes only the latest and greatest web technologies. Use it for your next heroic SPA project because you can't go wrong with it. Contains minimal viable "hello, world" code just to proof it works. Remove hello world and write your own great project.
 
-# 🎁What’s Inside?
+# 🎁 What’s Inside?
 
 Name | Type | Vendor description | Example Config | Notes
 ---- | ---- | ------------------ | -------------- | -----
@@ -11,7 +11,7 @@ Name | Type | Vendor description | Example Config | Notes
 [SASS](http://sass-lang.com/) | CSS Preprocessor | CSS with superpowers
 [whatwg-fetch](https://github.com/github/fetch) | Polyfill | A window.fetch JavaScript polyfill | | From GitHub. Implements the [spec](https://fetch.spec.whatwg.org/)
 
-# 👨🏼‍💻Usage
+# 👨🏼‍💻 Usage
 `npm install`
 
 for development purposes (watch mode with automatic browser refresh): `npm start` and go to http://localhost:8080/
