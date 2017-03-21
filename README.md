@@ -4,9 +4,10 @@ Includes only the latest and greatest web technologies. Use it for your next her
 
 Name | Type | Vendor description | Example Config | Notes
 ---- | ---- | ------------------ | -------------- | -----
-[React](https://facebook.github.io/react/) | View library | a javascript library for building user interfaces | | Redux not included
-[Webpack 2](https://webpack.js.org/) | Build tool | a module bundler for modern javascript applications (bundling, minification, watch mode, ect.) | [webpack.config.js](https://github.com/vinogradov/react-starter-kit/blob/master/webpack.config.js) | Includes: ([babel-loader](https://github.com/babel/babel-loader), [eslint-loader](https://github.com/MoOx/eslint-loader) and [sass-loader](https://github.com/webpack-contrib/sass-loader) 
-[Babel](https://babeljs.io/) | Transpiler | ES2015/2016/2017 support | [.babelrc](https://github.com/vinogradov/react-starter-kit/blob/master/.babelrc)
+[React](https://facebook.github.io/react/) | View library | a javascript library for building user interfaces
+[Redux](https://github.com/reactjs/redux/) | Data management | predictable state container for JavaScript apps
+[Webpack 2](https://webpack.js.org/) | Build tool | a module bundler for modern javascript applications (bundling, minification, watch mode, ect.) | [webpack.config.js](https://github.com/vinogradov/react-starter-kit/blob/master/webpack.config.js) | Loaders: [babel-loader](https://github.com/babel/babel-loader), [eslint-loader](https://github.com/MoOx/eslint-loader), [sass-loader](https://github.com/webpack-contrib/sass-loader) 
+[Babel](https://babeljs.io/) | Transpiler | ES2015/2016/2017 support | [.babelrc](https://github.com/vinogradov/react-starter-kit/blob/master/.babelrc) | Plugins: [transform-object-rest-spread](http://babeljs.io/docs/plugins/transform-object-rest-spread/) (spreads are currently [at STAGE 3](https://github.com/sebmarkbage/ecmascript-rest-spread))
 [ESLint](http://eslint.org/) | Linter | the pluggable linting utility for JavaScript and JSX | [.eslintrc.js](https://github.com/vinogradov/react-starter-kit/blob/master/.eslintrc.js)
 [SASS](http://sass-lang.com/) | CSS Preprocessor | CSS with superpowers
 [whatwg-fetch](https://github.com/github/fetch) | Polyfill | A window.fetch JavaScript polyfill | | From GitHub. Implements the [spec](https://fetch.spec.whatwg.org/)
