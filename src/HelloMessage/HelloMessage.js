@@ -20,8 +20,8 @@ export default class HelloMessage extends React.Component {
 
     render() {
         return (
-            <div>
-                <div>Hello {this.props.name}</div>
+            <div className="hello-message">
+                <div>Hello <span className="name">{this.props.name}</span></div>
                 <button onClick={this.onClickHandler}>
                     toggle: {this.state.toggle ? 'ON' : 'OFF'}
                 </button>
