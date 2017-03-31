@@ -5,6 +5,7 @@ Includes only the latest and greatest web technologies. Use it for your next her
 Name | Type | Vendor Description | Example Config | Notes
 ---- | ---- | ------------------ | -------------- | -----
 [react](https://facebook.github.io/react/) | View library | A javascript library for building user interfaces
+[react-router](https://github.com/ReactTraining/react-router) | Routing | Declarative routing for React 
 [redux](https://github.com/reactjs/redux/) | Data management | Predictable state container for JavaScript apps
 [react-redux](https://github.com/reactjs/react-redux) | Data management | Official React bindings for Redux
 [redux-thunk](https://github.com/gaearon/redux-thunk) | Data management | Thunk middleware for Redux

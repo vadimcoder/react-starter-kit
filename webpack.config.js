@@ -91,9 +91,14 @@ module.exports = function (env) {
             contentBase: DIST_PATH,
             host: '0.0.0.0',
             // proxy requests to the backend
-            proxy: {
-                '*': 'http://localhost'
-            }
+            // TODO: this setting doesn't work with "historyApiFallback: true"
+            // proxy: {
+            //     '*': 'http://localhost'
+            // },
+
+            // this setting is needed to support react-router
+            // TODO: this setting doesn't work with "proxy"
+            historyApiFallback: true
         }
     }
 };
