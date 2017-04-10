@@ -1,7 +1,8 @@
 import * as React from 'react';
-import './HelloMessage.scss';
+import PropTypes from 'prop-types';
+import './hello.scss';
 
-export default class HelloMessage extends React.Component {
+export default class Hello extends React.Component {
     constructor(props) {
         super(props);
         this.state = {toggle: true};
@@ -30,6 +31,6 @@ export default class HelloMessage extends React.Component {
     }
 }
 
-HelloMessage.propTypes = {
-    name: React.PropTypes.string
+Hello.propTypes = {
+    name: PropTypes.string
 };

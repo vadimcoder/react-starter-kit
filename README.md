@@ -5,9 +5,9 @@ Suitable for:
 2. Small pet projects/protorypes
 3. Production
 
-**If you don't need some library then just don't use it. Its source code will _NOT_ be included in the final bundle.**
-
 # 🎁 What’s Inside?
+
+**If you don't need some library then just don't use it. Its source code will _NOT_ be included in the final bundle.**
 
 Name | Type | Original Description | Example Config | Notes
 ---- | ---- | ------------------ | -------------- | -----
@@ -18,6 +18,7 @@ Name | Type | Original Description | Example Config | Notes
 [redux-thunk](https://github.com/gaearon/redux-thunk) | Data management | Thunk middleware for Redux
 [redux-saga](https://github.com/redux-saga/redux-saga) | Data management | An alternative side effect model for Redux apps | | An alternative to [redux-thunk](https://github.com/gaearon/redux-thunk). You need to `import "regenerator-runtime/runtime";` for using generators/`yield`
 [redux-logger](https://github.com/evgenyrodionov/redux-logger) | Utils | Logger for Redux
+[jest](https://github.com/facebook/jest) | QA | Painless JavaScript Testing
 [webpack 2](https://webpack.js.org/) | Build tool | A module bundler for modern javascript applications (bundling, minification, watch mode, ect.) | [webpack.config.js](https://github.com/vinogradov/react-starter-kit/blob/master/webpack.config.js) | Loaders: [babel-loader](https://github.com/babel/babel-loader), [eslint-loader](https://github.com/MoOx/eslint-loader), [sass-loader](https://github.com/webpack-contrib/sass-loader) 
 [babel](https://babeljs.io/) | Transpiler | ES2015/2016/2017 support | [.babelrc](https://github.com/vinogradov/react-starter-kit/blob/master/.babelrc) | Plugins: [transform-object-rest-spread](http://babeljs.io/docs/plugins/transform-object-rest-spread/) (spreads are currently [at STAGE 3](https://github.com/sebmarkbage/ecmascript-rest-spread))
 [eslint](http://eslint.org/) | Linter | The pluggable linting utility for JavaScript and JSX | [.eslintrc.js](https://github.com/vinogradov/react-starter-kit/blob/master/.eslintrc.js)
@@ -33,8 +34,13 @@ Name | Type | Original Description | Example Config | Notes
 `yarn start` (then go http://localhost:8080/)
 
 1. would like to publish the project as a website? Then make a distribution build by generating static files:  
-`yarn dist`
+`yarn dist` (then go to `dist` folder)
 
 If you have problems with running it please [file an issue](https://github.com/vinogradov/react-starter-kit/issues) or [contact me](https://www.facebook.com/vadim.vinogradov) on Facebook
 
 ![](http://vinogradov.github.io/react-starter-kit/screenshot.png)
+
+# Examples
+
+1. [examples/react](https://github.com/vinogradov/react-starter-kit/tree/master/src/examples/react) - trivial hello world using React
+1. [examples/redux](https://github.com/vinogradov/react-starter-kit/tree/master/src/examples/redux) - counter example with `redux` and `redux-saga`
