@@ -71,7 +71,7 @@ module.exports = function (env) {
                 include: SRC_ABSOLUTE_PATH, // other paths are ignored
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
-                    use: 'css-loader!sass-loader'
+                    use: 'css-loader?minimize!sass-loader'
                 })
             }, {
                 test: /\.(jpe?g|png|gif|svg)$/,
