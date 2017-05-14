@@ -1,16 +1,18 @@
 {
-    "presets": [
-        [
-            "es2015",
-            {
-                "modules": false
-            }
-        ],
-        "es2016",
-        "es2017",
-        "react"
+  "presets": [
+    [
+      "es2015", {"modules": false}
     ],
-    "plugins": [
-        "transform-object-rest-spread"
-    ]
+    "es2016",
+    "es2017",
+    "react"
+  ],
+  "plugins": [
+    "transform-object-rest-spread"
+  ],
+  "env": {
+    "test": {
+      "plugins": ["transform-es2015-modules-commonjs"]
+    }
+  }
 }

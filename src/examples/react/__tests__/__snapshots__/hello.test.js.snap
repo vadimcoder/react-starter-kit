@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="hello-message"
+>
+  <div>
+    Hello 
+    <span
+      className="name"
+    >
+      John
+    </span>
+  </div>
+  <button
+    onClick={[Function]}
+  >
+    toggle: 
+    ON
+  </button>
+</div>
+`;

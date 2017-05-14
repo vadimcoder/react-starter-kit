@@ -1,5 +1,5 @@
 export default function mapStateToProps(state) {
-    return {
-        counter: state
-    };
+  return {
+    counter: state
+  };
 }

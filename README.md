@@ -1,9 +1,14 @@
 Includes only the latest and greatest web technologies. Use it for your next heroic SPA project because you can't go wrong with it. Contains minimal viable "hello, world" code just to proof it works. Remove hello world and write your own great project.
 
+# Principles
+1. Use plain ES2015/16/17. Minimize use of experimental Stage-* Javascript features
+1. Use tests (by [jest](https://github.com/facebook/jest))
+1. Use linting (by [airbnb eslint config](https://github.com/airbnb/javascript))
+
 Suitable for:
 1. Education
-2. Small pet projects/protorypes
-3. Production
+1. Small pet projects/protorypes
+1. Production
 
 # 🎁 What’s Inside?
 

@@ -3,6 +3,6 @@ import * as ReactDOM from 'react-dom';
 import Hello from './hello';
 
 ReactDOM.render(
-    <Hello name="John"/>,
-    document.querySelector('#app')
+  <Hello name="John" />,
+  document.querySelector('#app')
 );

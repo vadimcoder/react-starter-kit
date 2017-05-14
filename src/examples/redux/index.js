@@ -3,22 +3,22 @@ import * as ReactDOM from 'react-dom';
 import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
-import 'regenerator-runtime/runtime';
-import {rootReducer} from './reducers';
+import 'regenerator-runtime/runtime'; // eslint-disable-line import/no-extraneous-dependencies
+import reducers from './reducers';
 import Counter from './counter';
-import {watchDecrementAsync} from './sagas';
+import sagas from './sagas';
 
 const sagaMiddleware = createSagaMiddleware();
 
 const store = createStore(
-    rootReducer,
-    applyMiddleware(sagaMiddleware));
+  reducers,
+  applyMiddleware(sagaMiddleware));
 
-sagaMiddleware.run(watchDecrementAsync);
+sagaMiddleware.run(sagas);
 
 ReactDOM.render(
-    <Provider store={store}>
-        <Counter />
-    </Provider>,
-    document.querySelector('#app')
+  <Provider store={store}>
+    <Counter />
+  </Provider>,
+  document.querySelector('#app')
 );
