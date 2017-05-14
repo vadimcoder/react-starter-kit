@@ -5,7 +5,7 @@ Includes only the latest and greatest web technologies. Use it for your next her
 1. Use tests (by [jest](https://github.com/facebook/jest))
 1. Use linting (by [airbnb eslint config](https://github.com/airbnb/javascript))
 
-Suitable for:
+# Suitable for
 1. Education
 1. Small pet projects/protorypes
 1. Production
