@@ -1,3 +1,5 @@
+[See in action](https://vinogradov.github.io/react-starter-kit)
+
 Includes only the latest and greatest web technologies (updated May 15 2017). Use it for your next heroic SPA project because you can't go wrong with it. Contains minimal viable "hello, world" code just to proof it works. Remove hello world and write your own great project.
 
 # Principles
@@ -36,7 +38,7 @@ Name | Library Type | Original Description | Example Config | Notes
 `yarn`
 
 1. run in development mode (watch changes in the files and refresh your browser automatically):  
-`yarn start` (then go http://localhost:8080/)
+`yarn start` (then go http://localhost:8080/ and you should see [this](https://vinogradov.github.io/react-starter-kit/))
 
 1. would like to publish the project as a website? Then make a distribution build by generating static files:  
 `yarn dist` (then go to `dist` folder)
@@ -44,6 +46,7 @@ Name | Library Type | Original Description | Example Config | Notes
 If you have problems with running it please [file an issue](https://github.com/vinogradov/react-starter-kit/issues) or [contact me](https://www.facebook.com/vadim.vinogradov) on Facebook. Thanks!
 
 ![](http://vinogradov.github.io/react-starter-kit/screenshot.png)
+https://vinogradov.github.io/react-starter-kit
 
 # Examples
 
