@@ -1,6 +1,6 @@
 [See in action](https://vinogradov.github.io/react-starter-kit)
 
-Includes only the latest and greatest web technologies (last updated at May 15 2017). Use it for your next heroic SPA project because you can't go wrong with it. Contains minimal viable "hello, world" code just to proof it works. Remove hello world and write your own great project.
+Includes only the latest and greatest web technologies (dependencies updated at May 15 2017). Use it for your next heroic SPA project because you can't go wrong with it. Contains minimal viable "hello, world" code just to proof it works. Remove hello world and write your own great project.
 
 # Principles
 1. Use plain [ES2015](https://babeljs.io/docs/plugins/preset-es2015/)/[16](https://babeljs.io/docs/plugins/preset-es2016/)/[17](https://babeljs.io/docs/plugins/preset-es2017/). Minimize use of [experimental Stage-X](https://babeljs.io/docs/plugins/#presets-stage-x-experimental-presets-) javascript features. Only [stage-3](https://babeljs.io/docs/plugins/preset-stage-3/)/4 features are supported, because they're relatively stable
