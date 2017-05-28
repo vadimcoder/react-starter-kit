@@ -9,7 +9,7 @@ Includes only the latest and greatest web technologies (dependencies updated at 
 
 # Suitable for
 1. Education
-1. Small pet projects/protorypes
+1. Small pet projects/prototypes
 1. Production
 
 # 🎁 What’s Inside?
