@@ -43,6 +43,12 @@ Name | Library Type | Original Description | Example Config | Notes
 1. would like to publish the project as a website? Then make a distribution build by generating static files:  
 `yarn dist` (then go to `dist` folder)
 
+1. run tests:  
+`yarn test`
+
+1. run linting:  
+`yarn lint`
+
 If you have problems with running it please [file an issue](https://github.com/vinogradov/react-starter-kit/issues) or [contact me](https://www.facebook.com/vadim.vinogradov) on Facebook. Thanks!
 
 ![](http://vinogradov.github.io/react-starter-kit/screenshot.png)
