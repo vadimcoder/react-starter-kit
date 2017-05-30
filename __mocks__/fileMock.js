@@ -1,1 +1,1 @@
-module.exports = 'path-to-file';
+module.exports = '';
