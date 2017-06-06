@@ -57,5 +57,5 @@ https://vinogradov.github.io/react-starter-kit
 # Examples
 
 1. [examples/react](https://github.com/vinogradov/react-starter-kit/tree/master/src/examples/react) - trivial hello world using React
-1. [examples/redux/one-file](https://github.com/vinogradov/react-starter-kit/tree/master/src/examples/redux/one-file) - the simplest redux example, all in one file
+1. [examples/redux/one-file](https://github.com/vinogradov/react-starter-kit/tree/master/src/examples/redux/one-file) - the simplest redux example, all in one file (for fast prototyping)
 1. [examples/redux/separate-files](https://github.com/vinogradov/react-starter-kit/tree/master/src/examples/redux/separate-files) - counter example with `redux` and `redux-saga`
