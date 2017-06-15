@@ -4,10 +4,10 @@ module.exports = {
     browser: true
   },
   rules: {
-    'object-curly-spacing': ['warn', 'never'],
-    'comma-dangle': ['warn', 'never'],
-    'max-len': ['warn', 120],
+    'object-curly-spacing': ['error', 'never'],
+    'comma-dangle': ['error', 'never'],
+    'max-len': ['error', 120],
     'react/jsx-filename-extension': ['off'],
-    'max-lines': ['warn', {max: 600, skipBlankLines: true, skipComments: true}]
+    'max-lines': ['error', {max: 600, skipBlankLines: true, skipComments: true}]
   }
 };

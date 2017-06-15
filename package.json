@@ -5,14 +5,14 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
-    "dist": "webpack --display-error-details --env.dist",
+    "dist": "webpack --display-error-details --env.production",
     "test": "jest src",
     "lint": "eslint . && eslint --no-ignore --config .eslintrc.js --config .eslintrc-test.js --ext test.js .",
     "prepush": "yarn test && yarn lint"
   },
   "license": "MIT",
   "dependencies": {
-    "babel-core": "6.24.1",
+    "babel-core": "6.25.0",
     "babel-jest": "20.0.3",
     "babel-loader": "7.0.0",
     "babel-plugin-transform-object-rest-spread": "6.23.0",
@@ -20,6 +20,7 @@
     "babel-preset-es2016": "6.24.1",
     "babel-preset-es2017": "6.24.1",
     "babel-preset-react": "6.24.1",
+    "chunk-manifest-webpack-plugin": "1.1.0",
     "clean-webpack-plugin": "0.1.16",
     "css-loader": "0.28.4",
     "eslint": "3.19.0",
@@ -36,8 +37,8 @@
     "jest": "20.0.4",
     "node-sass": "4.5.3",
     "prop-types": "15.5.10",
-    "react": "15.5.4",
-    "react-dom": "15.5.4",
+    "react": "15.6.0",
+    "react-dom": "15.6.0",
     "react-redux": "5.0.5",
     "react-router-dom": "4.1.1",
     "react-test-renderer": "15.5.4",
@@ -46,8 +47,10 @@
     "redux-saga": "0.15.3",
     "redux-thunk": "2.2.0",
     "sass-loader": "6.0.5",
+    "script-ext-html-webpack-plugin": "1.8.1",
     "style-loader": "0.18.2",
-    "webpack": "2.6.1"
+    "webpack": "2.6.1",
+    "webpack-chunk-hash": "0.4.0"
   },
   "devDependencies": {
     "husky": "0.13.4",
