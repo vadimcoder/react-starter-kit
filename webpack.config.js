@@ -6,6 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ChunkManifestPlugin = require('chunk-manifest-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const WebpackChunkHash = require('webpack-chunk-hash');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 function addVendorSplitting(plugins) {
   return [
@@ -66,6 +67,7 @@ module.exports = (env) => {
   let cssBundleFilename = `${FILE_PATTERN_DEVELOPMENT}.css`;
 
   const IS_PRODUCTION = env && env.production;
+  const IS_ANALYZE = env && env.analyze;
 
   if (IS_PRODUCTION) {
     applicationBundleFilename = `${FILE_PATTERN_PRODUCTION}.js`;
@@ -83,6 +85,13 @@ module.exports = (env) => {
       template: INDEX_HTML_TEMPLATE_ABSOLUTE_PATH
     })
   ];
+
+  if (IS_ANALYZE) {
+    plugins = [
+      new BundleAnalyzerPlugin(),
+      ...plugins
+    ];
+  }
 
   if (IS_PRODUCTION) {
     // don't use it in development to save time on recompile
