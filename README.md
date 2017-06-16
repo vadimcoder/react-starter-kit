@@ -55,10 +55,10 @@ Name | Library Type | Original Description | Example Config | Notes
 1. run linting:  
 `yarn lint`
 
-If you have problems with running it please [file an issue](https://github.com/vinogradov/react-starter-kit/issues) or [contact me](https://www.facebook.com/vadim.vinogradov) on Facebook. Thanks!
+If you have any questions or comments please don’t hesitate to leave a feedback in [issues](https://github.com/vinogradov/react-starter-kit/issues) or [contact me](https://www.facebook.com/vadim.vinogradov) on Facebook. Thanks!
 
+https://vinogradov.github.io/react-starter-kit:
 ![](http://vinogradov.github.io/react-starter-kit/screenshot.png)
-https://vinogradov.github.io/react-starter-kit
 
 
 [Webpack bundle analyzer](https://github.com/th0r/webpack-bundle-analyzer):
