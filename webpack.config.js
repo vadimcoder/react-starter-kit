@@ -8,7 +8,9 @@ const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const WebpackChunkHash = require('webpack-chunk-hash');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
-function addVendorSplitting(plugins) {
+function getVendorSplittingPlugins(defaultPlugins) {
+  // https://webpack.js.org/guides/caching/
+
   return [
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
@@ -27,18 +29,24 @@ function addVendorSplitting(plugins) {
       manifestVariable: 'webpackManifest',
       inlineManifest: true
     }),
-    ...plugins,
+    ...defaultPlugins,
     new ScriptExtHtmlWebpackPlugin({
       inline: 'manifest'
     })
   ];
 }
 
-function addProductionPlugins(plugins) {
+function getProductionPlugins(defaultPlugins, isAnalyze) {
+  // don't use it in development to save time on recompile
   // https://webpack.js.org/guides/production-build/
 
-  return [
-    ...plugins,
+  let plugins = [
+    ...getVendorSplittingPlugins(defaultPlugins),
+    // looks buggy, doesn't update [chunkhash].
+    // TODO: uncomment when migrate to webpack 3
+    // this https://github.com/webpack/webpack/issues/5184 is supposed to fix the problem. But it looks it doesn't.
+    // // https://medium.com/webpack/webpack-3-official-release-15fd2dd8f07b:
+    // new webpack.optimize.ModuleConcatenationPlugin(),
     new webpack.optimize.UglifyJsPlugin({
       beautify: false,
       mangle: true,
@@ -48,6 +56,25 @@ function addProductionPlugins(plugins) {
       'process.env.NODE_ENV': JSON.stringify('production')
     })
   ];
+
+  if (isAnalyze) {
+    plugins = [
+      ...plugins,
+      new BundleAnalyzerPlugin()
+    ];
+  }
+
+  return plugins;
+}
+
+function getDevelopmentPlugins(defaultPlugins) {
+  return defaultPlugins;
+}
+
+function getPlugins(defaultPlugins, isProduction, isAnalyze) {
+  return isProduction ?
+    getProductionPlugins(defaultPlugins, isAnalyze) :
+    getDevelopmentPlugins(defaultPlugins);
 }
 
 module.exports = (env) => {
@@ -74,7 +101,7 @@ module.exports = (env) => {
     cssBundleFilename = `${FILE_PATTERN_PRODUCTION}.css`;
   }
 
-  let plugins = [
+  const DEFAULT_PLUGINS = [
     new ExtractTextPlugin({
       filename: cssBundleFilename,
       disable: false,
@@ -86,18 +113,8 @@ module.exports = (env) => {
     })
   ];
 
-  if (IS_ANALYZE) {
-    plugins = [
-      new BundleAnalyzerPlugin(),
-      ...plugins
-    ];
-  }
+  const plugins = getPlugins(DEFAULT_PLUGINS, IS_PRODUCTION, IS_ANALYZE);
 
-  if (IS_PRODUCTION) {
-    // don't use it in development to save time on recompile
-    plugins = addVendorSplitting(plugins);
-    plugins = addProductionPlugins(plugins);
-  }
 
   return {
     context: SRC_ABSOLUTE_PATH,

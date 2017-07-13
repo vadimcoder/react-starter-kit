@@ -1,6 +1,6 @@
 [See in action](https://vinogradov.github.io/react-starter-kit)
 
-Includes only the latest and greatest web technologies (dependencies updated at 21 June 2017). Use it for your next heroic SPA project because you can't go wrong with it. Contains minimal viable "hello, world" code just to proof it works. Remove hello world and write your own great project.
+Includes only the latest and greatest web technologies (dependencies updated at 13 July 2017). Use it for your next heroic SPA project because you can't go wrong with it. Contains minimal viable "hello, world" code just to proof it works. Remove hello world and write your own great project.
 
 # Principles
 1. Using plain [ES2015](https://babeljs.io/docs/plugins/preset-es2015/)/[16](https://babeljs.io/docs/plugins/preset-es2016/)/[17](https://babeljs.io/docs/plugins/preset-es2017/). Minimizing use of [experimental Stage-X](https://babeljs.io/docs/plugins/#presets-stage-x-experimental-presets-) javascript features. Only [stage-3](https://babeljs.io/docs/plugins/preset-stage-3/)/4 features are supported, because they're relatively stable
@@ -28,7 +28,7 @@ Name | Library Type | Original Description | Example Config | Notes
 [redux-saga](https://github.com/redux-saga/redux-saga) | Data management | An alternative side effect model for Redux apps | | An alternative to [redux-thunk](https://github.com/gaearon/redux-thunk). You need to `import "regenerator-runtime/runtime";` for using generators/`yield`
 [redux-logger](https://github.com/evgenyrodionov/redux-logger) | Utils | Logger for Redux
 [jest](https://github.com/facebook/jest) | Test framework | Painless JavaScript Testing
-[webpack 2](https://webpack.js.org/) | Build/Bundler | A module bundler for modern javascript applications (bundling, minification, watch mode, ect.) | [webpack.config.js](https://github.com/vinogradov/react-starter-kit/blob/master/webpack.config.js) | Loaders: [babel-loader](https://github.com/babel/babel-loader), [eslint-loader](https://github.com/MoOx/eslint-loader), [sass-loader](https://github.com/webpack-contrib/sass-loader) 
+[webpack 3](https://webpack.js.org/) | Build/Bundler | A module bundler for modern javascript applications (bundling, minification, watch mode, ect.) | [webpack.config.js](https://github.com/vinogradov/react-starter-kit/blob/master/webpack.config.js) | Loaders: [babel-loader](https://github.com/babel/babel-loader), [eslint-loader](https://github.com/MoOx/eslint-loader), [sass-loader](https://github.com/webpack-contrib/sass-loader) 
 [webpack-bundle-analyzer](https://github.com/th0r/webpack-bundle-analyzer) | Build/Bundler | Webpack plugin and CLI utility that represents bundle content as convenient interactive zoomable treemap | | 
 [babel](https://babeljs.io/) | Transpiler | ES2015/2016/2017 support | [.babelrc](https://github.com/vinogradov/react-starter-kit/blob/master/.babelrc) | Plugins: [transform-object-rest-spread](http://babeljs.io/docs/plugins/transform-object-rest-spread/) (spreads are currently [at STAGE 3](https://github.com/sebmarkbage/ecmascript-rest-spread))
 [eslint](http://eslint.org/) | Linter | The pluggable linting utility for JavaScript and JSX | [.eslintrc.js](https://github.com/vinogradov/react-starter-kit/blob/master/.eslintrc.js)
