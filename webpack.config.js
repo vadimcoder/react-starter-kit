@@ -113,6 +113,7 @@ module.exports = (env) => {
     })
   ];
 
+  const CSS_MODULES_CONFIG = 'modules&importLoaders=1&localIdentName=[local]-[hash:base64:5]';
   const plugins = getPlugins(DEFAULT_PLUGINS, IS_PRODUCTION, IS_ANALYZE);
 
 
@@ -141,11 +142,11 @@ module.exports = (env) => {
           }
         }]
       }, {
-        test: /\.scss$/,
+        test: /\.css$/,
         include: SRC_ABSOLUTE_PATH, // other paths are ignored
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: `css-loader${IS_PRODUCTION ? '?minimize' : ''}!sass-loader`
+          use: `css-loader?${IS_PRODUCTION ? 'minimize&' : ''}${CSS_MODULES_CONFIG}`
         })
       }, {
         test: /\.(jpe?g|png|gif|svg)$/,

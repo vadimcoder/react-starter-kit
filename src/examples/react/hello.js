@@ -1,6 +1,6 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import './hello.scss';
+import style from './hello.css';
 
 export default class Hello extends React.Component {
   constructor(props) {
@@ -21,9 +21,9 @@ export default class Hello extends React.Component {
 
   render() {
     return (
-      <div className="hello-message">
-        <div>Hello <span className="name">{this.props.name}</span></div>
-        <button onClick={this.onClickHandler}>
+      <div>
+        <div>Hello <span className={style.name}>{this.props.name}</span></div>
+        <button className={style.submitButton} onClick={this.onClickHandler}>
           toggle: {this.state.toggle ? 'ON' : 'OFF'}
         </button>
       </div>

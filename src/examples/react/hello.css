@@ -1,0 +1,12 @@
+.primaryColor {
+  background-color: yellow;
+}
+
+.name {
+  composes: primaryColor;
+  padding: 0 5px;
+}
+
+.submitButton {
+  margin-top: 10px;
+}

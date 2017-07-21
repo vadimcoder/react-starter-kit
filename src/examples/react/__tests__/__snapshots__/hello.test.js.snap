@@ -1,18 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<div
-  className="hello-message"
->
+<div>
   <div>
     Hello 
     <span
-      className="name"
+      className={undefined}
     >
       John
     </span>
   </div>
   <button
+    className={undefined}
     onClick={[Function]}
   >
     toggle: 
