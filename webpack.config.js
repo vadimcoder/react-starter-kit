@@ -1,5 +1,5 @@
 const webpack = require('webpack');
-const path = require('path');
+const {join} = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const Clean = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -79,11 +79,12 @@ function getPlugins(defaultPlugins, isProduction, isAnalyze) {
 
 module.exports = (env) => {
   const SRC_PATH = 'src';
-  const SRC_ABSOLUTE_PATH = path.join(__dirname, SRC_PATH);
-  const INDEX_HTML_TEMPLATE_ABSOLUTE_PATH = path.join(SRC_ABSOLUTE_PATH, 'index.html');
+  const SRC_ABSOLUTE_PATH = join(__dirname, SRC_PATH);
+  const INDEX_HTML_TEMPLATE_ABSOLUTE_PATH = join(SRC_ABSOLUTE_PATH, 'index.html');
 
+  const DIST_ROOT = __dirname;
   const DIST_PATH = 'dist';
-  const DIST_ABSOLUTE_PATH = path.join(__dirname, DIST_PATH);
+  const DIST_ABSOLUTE_PATH = join(DIST_ROOT, DIST_PATH);
 
   // from documentation: Don’t use [chunkhash] in development since this will increase compilation time
   // https://webpack.js.org/guides/caching/
@@ -107,7 +108,9 @@ module.exports = (env) => {
       disable: false,
       allChunks: true
     }),
-    new Clean([DIST_PATH]),
+    new Clean([DIST_PATH], {
+      root: DIST_ROOT
+    }),
     new HtmlWebpackPlugin({
       template: INDEX_HTML_TEMPLATE_ABSOLUTE_PATH
     })
@@ -116,12 +119,12 @@ module.exports = (env) => {
   const CSS_MODULES_CONFIG = 'modules&importLoaders=1&localIdentName=[local]-[hash:base64:5]';
   const plugins = getPlugins(DEFAULT_PLUGINS, IS_PRODUCTION, IS_ANALYZE);
 
-
   return {
     context: SRC_ABSOLUTE_PATH,
     entry: './entry',
     output: {
       path: DIST_ABSOLUTE_PATH,
+      publicPath: '/', // uncomment this to load the bundle from site root (useful with react-router)
       filename: applicationBundleFilename
     },
     module: {
@@ -158,6 +161,8 @@ module.exports = (env) => {
 
     // specific settings for webpack-dev-server, see https://webpack.js.org/configuration/dev-server/
     devServer: {
+      clientLogLevel: 'error',
+
       // https://github.com/webpack/webpack-dev-server/issues/143
       // https://github.com/brikis98/docker-osx-dev
       // watchOptions: {
