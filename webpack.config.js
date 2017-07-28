@@ -169,7 +169,10 @@ module.exports = (env) => {
       //   poll: true,
       // },
       contentBase: DIST_PATH,
+
       host: '0.0.0.0',
+      // disableHostCheck: true,
+
       // proxy requests to the backend
       // TODO: this setting doesn't work with 'historyApiFallback: true'
       // proxy: {
@@ -177,7 +180,7 @@ module.exports = (env) => {
       // },
 
       // this setting is needed to support react-router
-      // TODO: this setting doesn't work with 'proxy'
+      // TODO: this setting doesn't work with 'proxy' *
       historyApiFallback: true
     }
   };

@@ -1,9 +1,10 @@
 [See in action](https://vinogradov.github.io/react-starter-kit)
 
-Includes only the latest and greatest web technologies (dependencies updated at 22 July 2017). Use it for your next heroic SPA project because you can't go wrong with it. Contains minimal viable "hello, world" code just to proof it works. Remove hello world and write your own great project.
+Includes only the latest and greatest web technologies (dependencies updated at 28 July 2017). Use it for your next heroic SPA project because you can't go wrong with it. Contains minimal viable "hello, world" code just to proof it works. Remove hello world and write your own great project.
 
 # Principles
 1. Using plain [ES2015](https://babeljs.io/docs/plugins/preset-es2015/)/[16](https://babeljs.io/docs/plugins/preset-es2016/)/[17](https://babeljs.io/docs/plugins/preset-es2017/). Minimizing use of [experimental Stage-X](https://babeljs.io/docs/plugins/#presets-stage-x-experimental-presets-) javascript features. Only [stage-3](https://babeljs.io/docs/plugins/preset-stage-3/)/4 features are supported, because they're relatively stable
+1. Using [redux-actions](https://github.com/acdlite/redux-actions) methodology for Redux
 1. Using tests (by [jest](https://github.com/facebook/jest), [example](https://github.com/vinogradov/react-starter-kit/blob/master/src/examples/react/__tests__/hello.test.js))
 1. Using linting (by [airbnb eslint config](https://github.com/airbnb/javascript))
 1. Using git [pre-push hook](https://git-scm.com/book/gr/v2/Customizing-Git-Git-Hooks) to force run tests and linting before push
@@ -24,6 +25,7 @@ Name | Library Type | Original Description | Example Config | Notes
 [react-router](https://github.com/ReactTraining/react-router) | Routing | Declarative routing for React 
 [redux](https://github.com/reactjs/redux/) | Data management | Predictable state container for JavaScript apps
 [react-redux](https://github.com/reactjs/react-redux) | Data management | Official React bindings for Redux
+[redux-actions](https://github.com/acdlite/redux-actions) | Data management | Flux Standard Action utilities for Redux
 [redux-thunk](https://github.com/gaearon/redux-thunk) | Data management | Thunk middleware for Redux
 [redux-saga](https://github.com/redux-saga/redux-saga) | Data management | An alternative side effect model for Redux apps | | An alternative to [redux-thunk](https://github.com/gaearon/redux-thunk). You need to `import "regenerator-runtime/runtime";` for using generators/`yield`
 [redux-logger](https://github.com/evgenyrodionov/redux-logger) | Utils | Logger for Redux

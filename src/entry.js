@@ -5,3 +5,4 @@ import 'file-loader?name=[name].[ext]!./favicon.ico';
 import './examples/react/index';
 // import './examples/redux/one-file';
 // import './examples/redux/separate-files';
+// import './examples/redux/separate-files-redux-actions';
