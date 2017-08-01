@@ -5,6 +5,7 @@ Includes only the latest and greatest web technologies (dependencies updated at 
 # Principles
 1. Using plain [ES2015](https://babeljs.io/docs/plugins/preset-es2015/)/[16](https://babeljs.io/docs/plugins/preset-es2016/)/[17](https://babeljs.io/docs/plugins/preset-es2017/). Minimizing use of [experimental Stage-X](https://babeljs.io/docs/plugins/#presets-stage-x-experimental-presets-) javascript features. Only [stage-3](https://babeljs.io/docs/plugins/preset-stage-3/)/4 features are supported, because they're relatively stable
 1. Using [redux-actions](https://github.com/acdlite/redux-actions) methodology for Redux
+1. Using [CSS Modules](https://github.com/css-modules/css-modules) methodology for CSS (with [babel-plugin-react-css-modules](https://github.com/gajus/babel-plugin-react-css-modules) for React)
 1. Using tests (by [jest](https://github.com/facebook/jest), [example](https://github.com/vinogradov/react-starter-kit/blob/master/src/examples/react/__tests__/hello.test.js))
 1. Using linting (by [airbnb eslint config](https://github.com/airbnb/javascript))
 1. Using git [pre-push hook](https://git-scm.com/book/gr/v2/Customizing-Git-Git-Hooks) to force run tests and linting before push
@@ -34,7 +35,6 @@ Name | Library Type | Original Description | Example Config | Notes
 [webpack-bundle-analyzer](https://github.com/th0r/webpack-bundle-analyzer) | Build/Bundler | Webpack plugin and CLI utility that represents bundle content as convenient interactive zoomable treemap | | 
 [babel](https://babeljs.io/) | Transpiler | ES2015/2016/2017 support | [.babelrc](https://github.com/vinogradov/react-starter-kit/blob/master/.babelrc) | Plugins: [transform-object-rest-spread](http://babeljs.io/docs/plugins/transform-object-rest-spread/) (spreads are currently [at STAGE 3](https://github.com/sebmarkbage/ecmascript-rest-spread))
 [eslint](http://eslint.org/) | Linter | The pluggable linting utility for JavaScript and JSX | [.eslintrc.js](https://github.com/vinogradov/react-starter-kit/blob/master/.eslintrc.js)
-[css modules](https://github.com/css-modules/css-modules) | CSS methodology
 [isomorphic-fetch](https://github.com/matthew-andrews/isomorphic-fetch) | Polyfill | Isomorphic WHATWG Fetch API, for Node & Browserify | | [whatwg-fetch](https://github.com/github/fetch) from GitHub on client,  [node-fetch](https://github.com/bitinn/node-fetch) on server
 [yarn](https://yarnpkg.com/) | Package management | Fast, reliable, and secure dependency management
 

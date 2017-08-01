@@ -116,7 +116,8 @@ module.exports = (env) => {
     })
   ];
 
-  const CSS_MODULES_CONFIG = 'modules&importLoaders=1&localIdentName=[local]-[hash:base64:5]';
+  const CSS_MODULES_CLASS_NAME_TEMPLATE = '[local]-[hash:base64:5]';
+  const CSS_MODULES_CONFIG = `modules&importLoaders=1&localIdentName=${CSS_MODULES_CLASS_NAME_TEMPLATE}`;
   const plugins = getPlugins(DEFAULT_PLUGINS, IS_PRODUCTION, IS_ANALYZE);
 
   return {
@@ -133,7 +134,17 @@ module.exports = (env) => {
         test: /\.js$/,
         include: SRC_ABSOLUTE_PATH, // other paths are ignored
         use: [{
-          loader: 'babel-loader'
+          loader: 'babel-loader',
+          query: {
+            plugins: [[
+              // this plugin is to be able to write styles in React components like styleName='button'
+              // instead of className={styles.button}. The first variant is more convenient for markupers.
+              'react-css-modules', {
+                context: SRC_ABSOLUTE_PATH,
+                generateScopedName: CSS_MODULES_CLASS_NAME_TEMPLATE
+              }
+            ]]
+          }
         }, {
           // ESLint should be before any transpiling tools.
           // Or use preLoaders section to check source files, not modified by other loaders (like babel-loader)

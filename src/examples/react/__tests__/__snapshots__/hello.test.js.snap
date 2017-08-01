@@ -5,14 +5,14 @@ exports[`renders correctly 1`] = `
   <div>
     Hello 
     <span
-      className={undefined}
+      styleName="name"
     >
       John
     </span>
   </div>
   <button
-    className={undefined}
     onClick={[Function]}
+    styleName="submit-button"
   >
     toggle: 
     ON
