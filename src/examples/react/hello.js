@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './hello.css';
+import logo from './logo.svg';
 
 export class Hello extends React.Component {
   constructor(props) {
@@ -22,6 +23,7 @@ export class Hello extends React.Component {
   render() {
     return (
       <div>
+        <img src={logo} styleName="logo" alt="" />
         <div>Hello <span styleName="name">{this.props.name}</span></div>
         <button styleName="submit-button" onClick={this.onClickHandler}>
           toggle: {this.state.toggle ? 'ON' : 'OFF'}

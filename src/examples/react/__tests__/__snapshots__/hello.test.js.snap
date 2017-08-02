@@ -2,6 +2,11 @@
 
 exports[`renders correctly 1`] = `
 <div>
+  <img
+    alt=""
+    src=""
+    styleName="logo"
+  />
   <div>
     Hello 
     <span

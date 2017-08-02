@@ -7,6 +7,7 @@ const ChunkManifestPlugin = require('chunk-manifest-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const WebpackChunkHash = require('webpack-chunk-hash');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const BIN_FILE_TYPES = require('./bin-file-types');
 
 function getVendorSplittingPlugins(defaultPlugins) {
   // https://webpack.js.org/guides/caching/
@@ -163,7 +164,7 @@ module.exports = (env) => {
           use: `css-loader?${IS_PRODUCTION ? 'minimize&' : ''}${CSS_MODULES_CONFIG}`
         })
       }, {
-        test: /\.(jpe?g|png|gif|svg)$/,
+        test: new RegExp(`\\.(${BIN_FILE_TYPES})$`),
         include: SRC_ABSOLUTE_PATH, // other paths are ignored
         use: 'file-loader'
       }]
