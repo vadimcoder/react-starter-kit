@@ -1,4 +1,4 @@
-export default function mapStateToProps(state) {
+export function mapStateToProps(state) {
   return {
     counter: state
   };

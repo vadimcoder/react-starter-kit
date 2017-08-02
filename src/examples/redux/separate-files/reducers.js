@@ -2,7 +2,7 @@ import {INCREMENT_ACTION, DECREMENT_ACTION} from './actions';
 
 const INITIAL_STATE = 0;
 
-export default function rootReducer(state = INITIAL_STATE, action) {
+export function reducers(state = INITIAL_STATE, action) {
   const STEP = 1;
 
   switch (action.type) {

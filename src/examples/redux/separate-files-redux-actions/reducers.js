@@ -6,7 +6,7 @@ import {
 
 const INITIAL_STATE = {};
 
-export default handleActions({
+export const reducer = handleActions({
   [action1](state, {payload: {value1}}) {
     return {
       ...state,

@@ -16,7 +16,7 @@ function* decrementAsync() {
   yield put(actions.decrementAction());
 }
 
-export default function* watchDecrementAsync() {
+export function* watchDecrementAsync() {
   while (true) { // eslint-disable-line no-constant-condition
     yield take(actions.DECREMENT_ASYNC_ACTION);
     yield call(decrementAsync);

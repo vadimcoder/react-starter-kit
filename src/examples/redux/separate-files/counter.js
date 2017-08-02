@@ -1,10 +1,10 @@
-import * as React from 'react';
+import React from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import mapStateToProps from './map-state';
+import {mapStateToProps} from './map-state';
 import {incrementAction, decrementAction, decrementAsyncAction} from './actions';
 
-class Counter extends React.Component {
+class Counter$ extends React.Component {
   constructor(props) {
     super(props);
     this.onIncrementHandler = this.onIncrementHandler.bind(this);
@@ -36,9 +36,9 @@ class Counter extends React.Component {
   }
 }
 
-Counter.propTypes = {
+Counter$.propTypes = {
   dispatch: PropTypes.func.isRequired,
   counter: PropTypes.number.isRequired
 };
 
-export default connect(mapStateToProps)(Counter);
+export const Counter = connect(mapStateToProps)(Counter$);

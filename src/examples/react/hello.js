@@ -1,8 +1,8 @@
-import * as React from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './hello.css';
 
-export default class Hello extends React.Component {
+export class Hello extends React.Component {
   constructor(props) {
     super(props);
     this.state = {toggle: true};
