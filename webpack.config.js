@@ -129,6 +129,9 @@ module.exports = (env) => {
       publicPath: '/', // uncomment this to load the bundle from site root (useful with react-router)
       filename: applicationBundleFilename
     },
+    resolve: {
+      modules: [join(__dirname, 'src'), 'node_modules']
+    },
     module: {
       // loaders are loaded from bottom to top
       rules: [{

@@ -2,14 +2,17 @@
 
 Includes only the latest and greatest web technologies (dependencies updated at 28 July 2017). Use it for your next heroic SPA project because you can't go wrong with it. Contains minimal viable "hello, world" code just to proof it works. Remove hello world and write your own great project.
 
-# Principles
+# Features
 1. JS: using plain [ES2015](https://babeljs.io/docs/plugins/preset-es2015/)/[16](https://babeljs.io/docs/plugins/preset-es2016/)/[17](https://babeljs.io/docs/plugins/preset-es2017/). Minimizing use of [experimental Stage-X](https://babeljs.io/docs/plugins/#presets-stage-x-experimental-presets-) javascript features. Only [stage-3](https://babeljs.io/docs/plugins/preset-stage-3/)/4 features are supported, because they're relatively stable
-1. Redux: using [redux-actions](https://github.com/acdlite/redux-actions) methodology
-1. CSS: using [CSS Modules](https://github.com/css-modules/css-modules) methodology
-1. Linting: using [airbnb config](https://github.com/airbnb/javascript)
-1. Using tests (by [jest](https://github.com/facebook/jest), [example](https://github.com/vinogradov/react-starter-kit/blob/master/src/examples/react/__tests__/hello.test.js))
-1. Using git [pre-push hook](https://git-scm.com/book/gr/v2/Customizing-Git-Git-Hooks) to force run tests and linting before push
-1. Using [visual analyzing tools](https://github.com/th0r/webpack-bundle-analyzer) for inspecting the bundle to always control its content and size
+2. Redux: using [redux-actions](https://github.com/acdlite/redux-actions) methodology
+3. CSS: using [CSS Modules](https://github.com/css-modules/css-modules) methodology
+4. Linting: using [airbnb config](https://github.com/airbnb/javascript)
+5. Using tests (by [jest](https://github.com/facebook/jest), [example](https://github.com/vinogradov/react-starter-kit/blob/master/src/examples/react/__tests__/hello.test.js))
+6. Using git [pre-push hook](https://git-scm.com/book/gr/v2/Customizing-Git-Git-Hooks) to force run tests and linting before push
+7. Webpack:
+* vendor code splitting (2 separate chunks: one for libraries and one for application. Using browser cache for libraries)
+* absolute imports for application code (e.g. `import 'components/button'` instead of `import '../../../components/button'`) 
+8. Using [visual analyzing tools](https://github.com/th0r/webpack-bundle-analyzer) for inspecting the bundle to always control its content and size
 
 # Suitable for
 1. Education
