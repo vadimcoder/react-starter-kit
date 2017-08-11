@@ -8,3 +8,4 @@ import './examples/react/index';
 // import './examples/redux/separate-files';
 // import './examples/redux/separate-files-redux-actions';
 // import './examples/router';
+// import './examples/sass/Component1';

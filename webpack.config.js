@@ -167,6 +167,13 @@ module.exports = (env) => {
           use: `css-loader?${IS_PRODUCTION ? 'minimize&' : ''}${CSS_MODULES_CONFIG}`
         })
       }, {
+        test: /\.scss$/,
+        include: SRC_ABSOLUTE_PATH, // other paths are ignored
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: `css-loader${IS_PRODUCTION ? '?minimize' : ''}!sass-loader`
+        })
+      }, {
         test: new RegExp(`\\.(${BIN_FILE_TYPES})$`),
         include: SRC_ABSOLUTE_PATH, // other paths are ignored
         use: 'file-loader'
