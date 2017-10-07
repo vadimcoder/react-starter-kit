@@ -1,0 +1,9 @@
+.primaryColor {
+  background-color: red;
+}
+
+.myBlock {
+  composes: primaryColor;
+  width: 100px;
+  height: 100px;
+}

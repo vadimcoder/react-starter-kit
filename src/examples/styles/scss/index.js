@@ -2,11 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './style.scss';
 
-export function Component1() {
-  return <div className="foo">Component1</div>;
+function Scss() {
+  return (
+    <div className="parent">
+      <div className="child" />
+    </div>
+  );
 }
 
 ReactDOM.render(
-  <Component1 />,
+  <Scss />,
   document.querySelector('#app')
 );

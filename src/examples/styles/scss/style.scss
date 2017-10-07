@@ -1,0 +1,9 @@
+$backgroundColor: blue;
+
+.parent {
+  .child {
+    background-color: $backgroundColor;
+    width: 100px;
+    height: 100px;
+  }
+}

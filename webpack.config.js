@@ -118,7 +118,12 @@ module.exports = (env) => {
   ];
 
   const CSS_MODULES_CLASS_NAME_TEMPLATE = '[local]-[hash:base64:5]';
-  const CSS_MODULES_CONFIG = `modules&importLoaders=1&localIdentName=${CSS_MODULES_CLASS_NAME_TEMPLATE}`;
+  const CSS_MODULES_CONFIG = {
+    modules: true,
+    sourceMap: false,
+    importLoaders: 1,
+    localIdentName: CSS_MODULES_CLASS_NAME_TEMPLATE
+  };
   const plugins = getPlugins(DEFAULT_PLUGINS, IS_PRODUCTION, IS_ANALYZE);
 
   return {
@@ -164,14 +169,38 @@ module.exports = (env) => {
         include: SRC_ABSOLUTE_PATH, // other paths are ignored
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: `css-loader?${IS_PRODUCTION ? 'minimize&' : ''}${CSS_MODULES_CONFIG}`
+          use: {
+            loader: 'css-loader',
+            options: {
+              ...CSS_MODULES_CONFIG,
+              minimize: IS_PRODUCTION
+            }
+          }
         })
       }, {
         test: /\.scss$/,
         include: SRC_ABSOLUTE_PATH, // other paths are ignored
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: `css-loader${IS_PRODUCTION ? '?minimize' : ''}!sass-loader`
+          use: [{
+            loader: 'css-loader',
+            options: {
+              minimize: IS_PRODUCTION
+            }
+          }, 'sass-loader']
+        })
+      }, {
+        test: /\.sass$/,
+        include: SRC_ABSOLUTE_PATH, // other paths are ignored
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [{
+            loader: 'css-loader',
+            options: {
+              ...CSS_MODULES_CONFIG,
+              minimize: IS_PRODUCTION
+            }
+          }, 'sass-loader']
         })
       }, {
         test: new RegExp(`\\.(${BIN_FILE_TYPES})$`),

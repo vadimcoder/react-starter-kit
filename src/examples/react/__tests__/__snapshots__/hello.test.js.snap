@@ -5,19 +5,18 @@ exports[`renders correctly 1`] = `
   <img
     alt=""
     src=""
-    styleName="logo"
+    style={
+      Object {
+        "width": "20px",
+      }
+    }
   />
   <div>
     Hello 
-    <span
-      styleName="name"
-    >
-      John
-    </span>
+    John
   </div>
   <button
     onClick={[Function]}
-    styleName="submit-button"
   >
     toggle: 
     ON
