@@ -2,38 +2,47 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import {Provider, connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import {createStore, applyMiddleware} from 'redux';
+import {createStore, applyMiddleware, combineReducers} from 'redux';
 import logger from 'redux-logger';
 
 
 // ACTIONS:
 
-const INCREMENT_ACTION = 'INCREMENT_ACTION';
-function incrementAction() {
+const ACTION_1 = 'ACTION_1';
+function action1() {
   return {
-    type: INCREMENT_ACTION
+    type: ACTION_1
   };
 }
 
-const DECREMENT_ACTION = 'DECREMENT_ACTION';
-function decrementAction() {
+const ACTION_2 = 'ACTION_2';
+function action2() {
   return {
-    type: DECREMENT_ACTION
+    type: ACTION_2
   };
 }
 
 // REDUCERS:
 
-const INITIAL_STATE = 2;
-
-function rootReducer(state = INITIAL_STATE, action) {
-  const STEP = 1;
-
+function foo(state = {a: 1}, action) {
   switch (action.type) {
-    case INCREMENT_ACTION:
-      return state + STEP;
-    case DECREMENT_ACTION:
-      return state - STEP;
+    case ACTION_1:
+      return {
+        ...state,
+        a: state.a + 1
+      };
+    default:
+      return state;
+  }
+}
+
+function bar(state = {b: 2}, action) {
+  switch (action.type) {
+    case ACTION_2:
+      return {
+        ...state,
+        b: state.b + 1
+      };
     default:
       return state;
   }
@@ -44,40 +53,40 @@ function rootReducer(state = INITIAL_STATE, action) {
 class Counter$ extends React.Component {
   constructor(props) {
     super(props);
-    this.onIncrementHandler = this.onIncrementHandler.bind(this);
-    this.onDecrementHandler = this.onDecrementHandler.bind(this);
+    this.fireAction1 = this.fireAction1.bind(this);
+    this.fireAction2 = this.fireAction2.bind(this);
   }
 
-  onIncrementHandler() {
-    this.props.dispatch(incrementAction());
+  fireAction1() {
+    this.props.dispatch(action1());
   }
 
-  onDecrementHandler() {
-    this.props.dispatch(decrementAction());
+  fireAction2() {
+    this.props.dispatch(action2());
   }
 
   render() {
     return (
       <div>
-        <div>{this.props.counter}</div>
-        <button onClick={this.onIncrementHandler}>increment</button>
-        <button onClick={this.onDecrementHandler}>decrement</button>
+        <div>{JSON.stringify(this.props.foo)}</div>
+        <div>{JSON.stringify(this.props.bar)}</div>
+        <button onClick={this.fireAction1}>fireAction1</button>
+        <button onClick={this.fireAction2}>fireAction2</button>
       </div>
     );
   }
 }
 
 Counter$.propTypes = {
-  dispatch: PropTypes.func.isRequired,
-  counter: PropTypes.number.isRequired
+  foo: PropTypes.shape().isRequired,
+  bar: PropTypes.shape().isRequired,
+  dispatch: PropTypes.func.isRequired
 };
 
-const Counter = connect(state => ({
-  counter: state
-}))(Counter$);
+const Counter = connect(({foo, bar}) => ({foo, bar}))(Counter$); // eslint-disable-line no-shadow
 
 const store = createStore(
-  rootReducer,
+  combineReducers({foo, bar}),
   applyMiddleware(logger)
 );
 
