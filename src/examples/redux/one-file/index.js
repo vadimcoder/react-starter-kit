@@ -1,5 +1,5 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import React from 'react';
+import ReactDOM from 'react-dom';
 import {Provider, connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {createStore, applyMiddleware, combineReducers} from 'redux';
