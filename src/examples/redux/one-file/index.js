@@ -58,11 +58,11 @@ class Counter$ extends React.Component {
   }
 
   fireAction1() {
-    this.props.dispatch(action1());
+    this.props.action1();
   }
 
   fireAction2() {
-    this.props.dispatch(action2());
+    this.props.action2();
   }
 
   render() {
@@ -80,10 +80,11 @@ class Counter$ extends React.Component {
 Counter$.propTypes = {
   foo: PropTypes.shape().isRequired,
   bar: PropTypes.shape().isRequired,
-  dispatch: PropTypes.func.isRequired
+  action1: PropTypes.func.isRequired,
+  action2: PropTypes.func.isRequired
 };
 
-const Counter = connect(({foo, bar}) => ({foo, bar}))(Counter$); // eslint-disable-line no-shadow
+const Counter = connect(({foo, bar}) => ({foo, bar}), {action1, action2})(Counter$); // eslint-disable-line no-shadow
 
 const store = createStore(
   combineReducers({foo, bar}),
