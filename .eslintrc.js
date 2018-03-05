@@ -10,7 +10,8 @@ module.exports = {
     'react/jsx-filename-extension': ['off'],
     'max-lines': ['error', {max: 600, skipBlankLines: true, skipComments: true}],
     "import/prefer-default-export": ['off'],
-    "import/named": ['error']
+    "import/named": ['error'],
+    "no-param-reassign": ['off']
   },
   settings: {
     'import/resolver': 'webpack'
