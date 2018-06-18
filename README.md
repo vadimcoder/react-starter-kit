@@ -10,7 +10,7 @@ Includes only the latest and greatest web technologies (dependencies updated at 
 5. Using tests (by [jest](https://github.com/facebook/jest), [example](https://github.com/vinogradov/react-starter-kit/blob/master/src/examples/react/__tests__/hello.test.js))
 6. Using git [pre-push hook](https://git-scm.com/book/gr/v2/Customizing-Git-Git-Hooks) to force run tests and linting before push
 7. Webpack:
-* vendor code splitting (2 separate chunks: one for libraries and one for application. Using browser cache for libraries)
+* vendor code splitting (2 separate chunks: one for libraries and one for application. Let your browser cache libraries)
 * absolute imports for application code (e.g. `import 'components/button'` instead of `import '../../../components/button'`) 
 8. Using [visual analyzing tools](https://github.com/th0r/webpack-bundle-analyzer) for inspecting the bundle to always control its content and size
 
