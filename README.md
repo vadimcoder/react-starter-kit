@@ -28,6 +28,7 @@ Name | Library Type | Original Description | Example Config | Notes
 [react](https://facebook.github.io/react/) | View layer | A javascript library for building user interfaces
 [react-router](https://github.com/ReactTraining/react-router) | Routing | Declarative routing for React 
 [redux](https://github.com/reactjs/redux/) | Data management | Predictable state container for JavaScript apps
+[reselect](https://github.com/reduxjs/reselect) | Data management | Selector library for Redux
 [react-redux](https://github.com/reactjs/react-redux) | Data management | Official React bindings for Redux
 [redux-actions](https://github.com/acdlite/redux-actions) | Data management | Flux Standard Action utilities for Redux
 [redux-thunk](https://github.com/gaearon/redux-thunk) | Data management | Thunk middleware for Redux
